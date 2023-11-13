@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+</head>
+<body>
+    <article>
+        <div class="side">
+            <h2>勤怠管理システム</h2>
+            <ul style="text-align: left;">
+                <ul>管理者のみ</ul>
+                <ul><a href="user">ユーザ一覧</a></ul>
+            </ul>
+            <ul style="text-align: left;">
+                <ul>山田太郎さん</ul>
+                <ul><a href="edit.html">&#x271A;プロフィール編集</a></ul>
+                <ul><a href="attendance">&#x271A;勤怠入力</a></ul>
+                <ul><a href="attendanceList">&#x271A;勤怠状況一覧</a></ul>
+                <ul><a href="attendance_history.html">&#x271A;勤怠履歴一覧</a></ul>
+                <ul><a href="login.html">ログアウト</a></ul>
+            </ul>
+        </div> 
+        <div class="content">
+            <h2>新規登録</h2>
+            <p style="color: red; text-align: right;">※は必須項目</p>
+            <form method="post" action="/new">
+                <table>
+                    <tr>
+                        <th><span style="color: red;">※</span>名前</th>
+                        <td><input type="text" name="name" th:value="*{name}" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th><span style="color: red;">※</span>ログインID</th>
+                        <td><input type="login_id" name="loginId" th:value="*{loginId}" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th><span style="color: red;">※</span>パスワード</th>
+                        <td><input type="password" name="password" th:value="*{password}" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td><input type="tel" name="tel" th:value="*{tel}" style="width: 100%;"></td>
+                    </tr>
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td><input type="email" name="email" th:value="*{email}" style="width: 100%;"></td>
+                    </tr>
+                </table>
+                <input type="submit" value="登録" style="margin: 15px;">
+            </form>
+        </div>
+    </article>
+</body>
+</html>

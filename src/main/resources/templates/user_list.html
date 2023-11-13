@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user_list</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+</head>
+<body>
+    <article>
+        <div class="side">
+            <h2>勤怠管理システム</h2>
+            <ul style="text-align: left;">
+                <ul>管理者のみ</ul>
+                <ul><a href="user">&#x271A;ユーザ一覧</a></ul>
+                <ul><a href="sum_list.html">&#x271A;勤務時間集計一覧</a></ul>
+            </ul>
+            <ul style="text-align: left;">
+                <ul>山田太郎さん</ul>
+                <ul><a href="edit.html">&#x271A;プロフィール編集</a></ul>
+                <ul><a href="attendance">&#x271A;勤怠入力</a></ul>
+                <ul><a href="attendanceList">&#x271A;勤怠状況一覧</a></ul>
+                <ul><a href="attendance_history.html">&#x271A;勤怠履歴一覧</a></ul>
+                <ul><a href="login.html">ログアウト</a></ul>
+            </ul>
+        </div> 
+        <div class="content">
+            <h2>ユーザ一覧</h2>
+            <form method="get" action="/edit" th:object="${formModel}">
+            <table>
+                <tr>
+                    <th>名前</th>
+                    <th>ログインID</th>
+                    <th>パスワード</th>
+                    <th>電話番号</th>
+                    <th>メールアドレス</th>
+                    <th>詳細</th>
+                </tr>
+                <tr th:each="item:${data}">
+                    <td th:text="${item.name}"></td>
+                    <td th:text="${item.loginId}"></td>
+                    <td th:text="${item.password}"></td>
+                    <td th:text="${item.tel}"></td>
+                    <td th:text="${item.email}"></td>
+                    <td><a th:href="@{'edit/'+${item.id}}">&#x271A;</a></td>
+<!--                    <td><a th:href="edit" + "${item.id}">&#x271A;</a></input></td>-->
+<!--                    <td><a th:href="edit/"+${item.id}>&#x271A;</a></input></td>-->
+                </tr>
+            </table>
+            </form>
+            <button  style="margin: 15px;"><a href="new">新規登録</a></button>
+        </div>
+    </article>
+</body>
+</html>

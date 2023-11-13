@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+body {
+  font-family:'Noto Sans JP',sans-serif;
+  background-color:#f6f5f4;
+}
+
+.side {
+ background-color:gray;
+ width: 300px;
+ height:500px;
+ text-align:center;
+} 
+
+.content {
+ width:950px;
+ height:300px;
+ text-align:center;
+ margin-left:10px;/*サイドバーとメインコンテンツの間に隙間                    をあけた*/
+}
+
+article {
+ display:flex;/*サイドバーとメインコンテンツを横並びにする                指定をした*/
+}
+
+table{
+   border-collapse: collapse;
+   border-spacing: 0;
+   width: 100%;
+ }
+
+ table tr{
+   border-bottom: solid 1px gray;
+   cursor: pointer;
+ }
+
+ table tr:hover{
+   background-color: #d4f0fd;
+ }
+
+ table th,table td{
+   text-align: center;
+   padding: 15px 0;
+ }
+
+ ul{
+  margin: 0;
+  padding: 5px;
+ }
+
+ a{
+  text-decoration: none;
+ }
+
